@@ -1,0 +1,780 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --main-font-colour: white;
+    --main-background-colour: black;
+}
+
+/* Scroll snap */
+
+html {
+    scroll-snap-type: y mandatory;
+}
+
+header,
+.bio,
+.projectsContainer,
+footer {
+    scroll-snap-align: start;
+}
+
+/* Custom scroll bar */
+
+body::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: rgb(80, 79, 79);
+    border-radius: 15px;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+/* Animate when containers come into view */
+
+.hero,
+.bio {
+    margin-bottom: 50px;
+}
+
+
+.hero.in-view {
+    animation: fade 3s ease;
+
+}
+
+.bio.in-view {
+    animation: fade 3s ease;
+}
+
+.projectsContainer.in-view {
+    animation: fade 3s ease;
+
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Main */
+
+main {
+    background-color: var(--main-background-colour);
+}
+
+/* HEADER/HERO */
+
+header {
+    height: 10vh;
+    background-color: var(--main-background-colour);
+}
+
+.hero {
+    height: 90vh;
+    background-color: var(--main-background-colour);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeMessage {
+    position: absolute;
+    /* border: 1px solid blsue; */
+    z-index: 6;
+}
+
+.welcomeMessage h1,
+.welcomeMessage p,
+.welcomeMessage .mdi {
+    color: var(--main-font-colour);
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sun {
+    background: linear-gradient(
+        yellow 30%,
+        orangered 60%,
+        red 90%
+        );
+    border-radius: 50%;
+    position: relative;
+    left: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Down chevron appears after welcome message */
+.scroll {
+    display: flex;
+    justify-content: center; 
+    animation: scroll 2s linear infinite;
+    animation-delay: 14s;
+    opacity: 0;
+}
+
+@keyframes scroll {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+/* .groundArea contains grid & mountains */
+.groundArea {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mountains {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    position: absolute;
+    /* solves the issue where mountains move quite far up as the screen width adjusts */
+    top: calc(70vh - 15vw);
+    z-index: 1;
+    height: 15vw;
+    overflow: hidden;
+    width: 100%;
+}
+
+.mountain {
+	width: 0;
+	height: 0;
+
+    border-left: 15vw solid transparent;
+	border-right: 15vw solid transparent;
+	border-bottom: 15vw solid blue;
+}
+
+.right-mountains,
+.left-mountains {
+    display: flex;
+}
+
+.inner1 {
+    border-left: 15vw solid transparent;
+	border-right: 15vw solid transparent;
+	border-bottom: 15vw solid black;
+    position: relative;
+}
+
+.left-mountains .inner1 {
+    left: 4%;
+}
+
+.right-mountains .inner1 {
+    right: 2%;
+}
+
+.inner2 {
+    border-left: 14vw solid transparent;
+	border-right: 14vw solid transparent;
+	border-bottom: 14vw solid black;
+    position: relative;
+    top: 7%;
+}
+
+.left-mountains .inner2 {
+    left: 10%;
+}
+
+.right-mountains .inner2 {
+    right: 12%;
+}
+
+.inner3 {
+    border-left: 13vw solid transparent;
+	border-right: 13vw solid transparent;
+	border-bottom: 13vw solid black;
+    position: relative;
+    top: 14%;
+}
+
+.left-mountains .inner3 {
+    left: 18%;
+}
+
+.right-mountains .inner3 {
+    right: 21%;
+}
+
+.inner4 {
+    border-left: 12vw solid transparent;
+	border-right: 12vw solid transparent;
+	border-bottom: 12vw solid black;
+    position: relative;
+    z-index: 5;
+}
+
+.left-mountains .inner4 {
+    left: 37%;
+    top: 21%;
+
+}
+
+.right-mountains .inner4 {
+    right: 42%;
+    top: 20%;
+}
+
+.inner5 {
+    border-left: 10vw solid transparent;
+	border-right: 10vw solid transparent;
+	border-bottom: 10vw solid black;
+    position: relative;
+    top: 34%;
+}
+
+.left-mountains .inner5 {
+    left: 37%;
+}
+
+.right-mountains .inner5 {
+    right: 37%;
+}
+
+.inner6 {
+    border-left: 14vw solid transparent;
+	border-right: 14vw solid transparent;
+	border-bottom: 14vw solid black;
+    position: relative;
+    top: 8%;
+}
+
+.left-mountains .inner6 {
+    left: 46%;
+}
+
+.right-mountains .inner6 {
+    right: 67%;
+}
+
+.inner7 {
+    border-left: 12vw solid transparent;
+	border-right: 12vw solid transparent;
+	border-bottom: 12vw solid black;
+    position: relative;
+    top: 22%;
+}
+
+.left-mountains .inner7 {
+    left: 62%;
+
+}
+
+.right-mountains .inner7 {
+    right: 64%;
+}
+
+.inner8 {
+    border-left: 12vw solid transparent;
+	border-right: 12vw solid transparent;
+	border-bottom: 12vw solid black;
+    position: relative;
+    top: 14%;
+}
+
+.left-mountains .inner8 {
+    left: 87%;
+}
+
+.right-mountains .inner8 {
+    right: 70%;
+    border-left: 14vw solid transparent;
+	border-right: 14vw solid transparent;
+	border-bottom: 14vw solid black;
+    position: relative;
+    top: 10%;
+}
+
+
+
+.gridContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+
+}
+
+.grid {
+    display: flex;
+    justify-content: center;
+    transform: perspective(10vw) rotateX(45deg) scale(2);
+    z-index: 10;
+    mask: linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 1) 100%);
+   z-index: 3;
+}
+
+.cell {
+    width: 2vw;
+    height: 1vw;
+    border: 0.1vw solid rgb(119, 0, 255);
+    animation:moving-grid 0.5s infinite linear;
+    
+}
+
+@keyframes moving-grid{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(calc(1vw)) ;
+    }
+}
+
+/* BIO CONTAINER */
+
+.bio {
+    height: 100vh;
+    background-color: var(--main-background-colour);
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.bioContainer {
+    display: flex;
+    padding: 20px;
+}
+
+.bioImage img {
+    width: 30vw;
+    height: 30vw;
+
+}
+
+.bio h2 {
+    color: white;
+}
+
+.bioText {
+    font-size: 1rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.bioText p {
+    color: var(--main-font-colour);
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bio.in-view {
+    animation: fade 3s ease;
+}
+
+.scroll2 {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 2vw;
+    animation: scroll 2s linear infinite;
+    opacity: 0;
+}
+
+/* PROJECT/FOOTER */
+
+.projectsContainer {
+    height: 90vh;
+}
+
+.projectsContainer.in-view {
+    animation: fade 3s ease;
+
+}
+
+.projectsContainer {
+    height: 90vh;
+}
+
+.projectHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    height: 10%;
+}
+
+.projectText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.linksToProject {
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.projectsContainer h2,
+.projectTitle h3  {
+    color: white;
+}
+
+.titleAndDescription p {
+    color: var(--main-font-colour);
+}
+
+.slideshowContainer {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+}
+
+.prev,
+.next {
+    color: gray;
+    font-size: 2rem;
+}
+
+.purple .projectImage {
+    background-color: purple;
+}
+
+.blue .projectImage {
+    background-color: blue;
+}
+
+.orange .projectImage {
+    background-color: orange;
+}
+
+.cardsContainer {
+    width: 94%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 80%;
+}
+
+
+.projectCard {
+    border: 5px solid gray;
+    border-radius: 20px;
+    height: 90%;
+    width: 65%;
+    display: none;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+    z-index: 6;
+}
+
+.next:hover,
+.prev:hover {
+    transform: scale(1.5);
+    color: blueviolet;
+}
+
+
+.slideFromRight {
+  animation-name: slide-right;
+  animation-duration: 1.5s;
+}
+
+@keyframes slide-right {
+  from {transform: translate(100vw)} 
+  to {transform: translate(0)}
+}
+
+.slideFromLeft {
+    animation-name: slide-left;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes slide-left {
+    from {transform: translate(-100vw)} 
+    to {
+        transform: translate(0vw);
+    }
+  }
+
+.slideAppear {
+    animation-name: slide-appear;
+    animation-duration: 1.5s;
+}
+
+@keyframes slide-appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.projectImage {
+    width: 50%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1vw + 1rem);
+    text-align: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.titleAndDescription p {
+    padding-top: 5px;
+    font-size: 0.9rem;
+}
+
+.projectText {
+    width: 50%;
+    padding: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 0.75rem;
+    width: 0.75rem;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: blueviolet;
+    transform: scale(1.25);
+}
+
+.mdi:not(.mdi-chevron-double-down) {
+    font-size: 2rem;
+    transition: color 0.6s ease;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+}
+
+.mdi:not(.mdi-chevron-double-down):hover {
+    color: blueviolet;
+    transform: scale(1.25);
+}
+
+footer {
+    background-color: var(--main-background-colour);
+    height: 10vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    .cell {
+        width: 2vh;
+        height: 1vh;
+    }
+    @keyframes moving-grid{
+        0%{
+            transform: translateY(0);
+        }
+        100%{
+            transform: translateY(calc(1vh)) ;
+        }
+    }
+    .container {
+        background: linear-gradient(black 0%,rgb(6, 0, 61) 20%, rgb(16, 0, 160) 30%, rgb(88, 0, 160) 40%, red 50%, orangered 70%, black 95%);
+    }
+    .sun {
+        width: 10rem;
+        height: 10rem;
+        left: 45%;
+    }
+    .welcomeMessage .mdi,
+    .scroll2 .mdi {
+        font-size: 3rem;
+    }
+    /* .mountains {
+        display: none;
+    } */
+    .bioImage {
+        display: none;
+    }
+    .projectCard {
+        flex-direction: column;
+    }
+    .projectImage {
+        height: 50%;
+        width: 100%;
+    }
+    .projectText {
+        height: 50%;
+        width: 100%;
+    }
+}
+
+/* Mobile stles landscape */
+
+@media only screen and (min-width: 601px) and (max-width: 1199px) and (max-height: 600px) {
+    /* .cell {
+        border: 0.1vw solid red;
+    } */
+    .container {
+        background: linear-gradient(black 0%,rgb(6, 0, 61) 20%, rgb(16, 0, 160) 30%, rgb(88, 0, 160) 40%, red 50%, orangered 70%, black 95%);
+    }
+    .sun {
+        width: 10rem;
+        height: 10rem;
+        left: 45%;
+    }
+    .bioImage {
+        display: none;
+    }
+    .projectImage {
+        height: 100%;
+        width: 50%;
+    }
+    .projectText {
+        height: 100%;
+        width: 50%;
+    }
+}
+
+
+
+/* Tablet Styles */
+@media only screen and (min-width: 601px) and (max-width: 1199px) and (min-height: 601px) {
+    .container {
+        background: linear-gradient(black 0%,rgb(6, 0, 61) 20%, rgb(16, 0, 160) 30%, rgb(88, 0, 160) 40%, red 50%, orangered 70%, black 95%);
+
+    }
+    .sun {
+        width: 10rem;
+        height: 10rem;
+        left: 60%;
+
+    }
+    .welcomeMessage h1,
+    .welcomeMessage .mdi,
+    .scroll2 .mdi {
+        font-size: 6vw;
+    }
+    h2 {
+        font-size: calc(1vw + 2rem); 
+    }
+    .bioText,
+    .titleAndDescription p {
+        font-size: calc(1vw + 0.5rem); 
+    }
+    .mdi {
+        font-size: calc(1vw + 1.5rem); 
+
+    }
+    .projectImage,
+    .titleAndDescription h3 {
+        font-size: calc(1vw + 1rem);
+    }
+
+
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1200px) {
+    .container {
+        background: linear-gradient(black 0%,rgb(6, 0, 61) 20%, rgb(16, 0, 160) 30%, rgb(88, 0, 160) 40%, red 50%, orangered 70%, black 95%);
+
+    }
+    .sun {
+        width: 14vw;
+        height: 14vw;
+        left: 60%;
+
+    }
+    .welcomeMessage h1,
+    .welcomeMessage .mdi,
+    .scroll2 .mdi {
+        font-size: 6vw;
+    }
+    .bio {
+        margin: 50px auto;
+        width: 80vw;
+    }
+    h2 {
+        font-size: calc(1vw + 2rem); 
+    }
+    .bioText,
+    .titleAndDescription p {
+        font-size: calc(1vw + 0.5rem); 
+    }
+    .mdi {
+        font-size: calc(1vw + 1.5rem); 
+
+    }
+    .projectImage,
+    .titleAndDescription h3 {
+        font-size: calc(1vw + 1rem);
+    }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="hero animate">
+            <div class="welcomeMessage">
+                <h1>Welcome</h1>
+                <div class="scroll">
+                    <div class="scrollIcon">
+                        <span class="mdi mdi-chevron-double-down"></span>
+                    </div>
+                </div>  
+            </div>
+            <div class="container">
+                <div class="sunContainer">
+                    <div class="sun"></div>
+                </div>
+            </div>
+            <div class="groundArea">
+                <div class="mountains">
+                    <div class="left-mountains">
+                        <div class="mountain inner8"></div>
+                        <div class="mountain inner7"></div>
+                        <div class="mountain inner6"></div>
+                        <div class="mountain inner5"></div>
+                        <div class="mountain inner4"></div>
+                        <div class="mountain inner3"></div>
+                        <div class="mountain inner2"></div>
+                        <div class="mountain inner1"></div>
+                    </div>
+                    <div class="right-mountains">
+                        <div class="mountain inner1"></div>
+                        <div class="mountain inner2"></div>
+                        <div class="mountain inner3"></div>
+                        <div class="mountain inner4"></div>
+                        <div class="mountain inner5"></div>
+                        <div class="mountain inner6"></div>
+                        <div class="mountain inner7"></div>
+                        <div class="mountain inner8"></div>
+        
+                    </div>
+                </div>
+                <div class="gridContainer">
+                    <div class="grid"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bio animate">
+            <div class="bioContainer">
+                <div class="bioImage">
+                    <img src="./images/profilePic.png" alt="">
+                </div>
+                <div class="bioText">
+                    <h2>About Me</h2>
+                    <p>I'm a driven individual with a deep love for technology and a strong desire to contribute to the world through software development.</p>
+                    <p>I'm constantly exploring new technologies and pushing my skills to the limit.</p>
+                    <p>I believe in the power of collaboration and am excited to join a team of talented engineers.</p>
+                </div>
+            </div>
+            <div class="scroll2">
+                <span class="mdi mdi-chevron-double-down"></span>
+            </div>  
+        </div>
+        <div class="projectsContainer animate">
+            <div class="projectHeader">
+                <h2>My Work</h2>
+            </div>
+            <div class="slideshowContainer">
+                <div class="cardsContainer">
+                    <a class="prev">❮</a>
+
+                    <div class="projectCard purple slideFromRight">
+                        <div class="projectImage">
+                            More Coming Soon
+                        </div>
+                        <div class="projectText">
+                            <div class="projectTitle">
+                                <div class="titleAndDescription">
+                                    <h3>Project Name</h3>
+                                    <!-- Character count 150 including spaces -->
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto assumenda quos vel adipisci veniam voluptas vero qui eaque aliquam exercitationem eiu?</p>
+                                </div>
+                            </div>
+                            <div class="linksToProject">
+                                <span class="mdi mdi-github"></span>
+                                <span class="mdi mdi-link-box-variant-outline"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projectCard blue slideFromRight">
+                        <div class="projectImage">
+                            More Coming Soon
+                        </div>
+                        <div class="projectText">
+                            <div class="projectTitle">
+                                <div class="titleAndDescription">
+                                    <h3>Project Name</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto assumenda quos vel adipisci veniam voluptas vero qui eaque aliquam exercitationem?</p>
+                                </div>
+                            </div>
+                            <div class="linksToProject">
+                                <span class="mdi mdi-github"></span>
+                                <span class="mdi mdi-link-box-variant-outline"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="projectCard orange slideFromRight">
+                        <div class="projectImage">
+                            More Coming Soon
+                        </div>
+                        <div class="projectText">
+                            <div class="projectTitle">
+                                <div class="titleAndDescription">
+                                    <h3>Project Name</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto assumenda quos vel adipisci veniam voluptas vero qui eaque aliquam exercitationem?</p>
+                                </div>
+                            </div>
+                            <div class="linksToProject">
+                                <span class="mdi mdi-github"></span>
+                                <span class="mdi mdi-link-box-variant-outline"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a class="next">❯</a> 
+                </div>
+                <div style="text-align:center" class="dots">
+                    <span class="dot active" onclick="showSlide(1)"></span> 
+                    <span class="dot" onclick="showSlide(2)"></span> 
+                    <span class="dot" onclick="showSlide(3)"></span> 
+                </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footerIcons"></div>
+        <span class="mdi mdi-github"></span>
+        <span class="mdi mdi-linkedin"></span>
+        <span class="mdi mdi-gmail"></span>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
